@@ -1,8 +1,7 @@
 jmp main ; pula para o comeco do programa (main)
-
-
-
-
+msn1: string "YOU WON !!!" ;mensagem ao eliminar todos os aliens.
+msn2: string "The earth has been invaded, and it's you fault!" ;mensagem ao ser eliminado por algum alien.
+msn0: string "Do you want to play again? <y/n>" ;mensagem ao fim de uma gameplay, ganhando ou perdendo.
 
 
 main:
