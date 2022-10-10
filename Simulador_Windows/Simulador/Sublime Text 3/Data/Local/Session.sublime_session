@@ -1,15 +1,17 @@
 {
 	"folder_history":
 	[
+		"/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects",
+		"/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/Space Invaders",
+		"/C/Users/joaog/Downloads/ultra-alien-fighter-juliana-crivelli-8909303"
 	],
 	"last_version": 3065,
-	"last_window_id": 1,
+	"last_window_id": 5,
 	"log_indexing": false,
 	"settings":
 	{
-	},
-	"windows":
-	[
+		"new_window_height": 718.0,
+		"new_window_settings":
 		{
 			"auto_complete":
 			{
@@ -25,20 +27,6 @@
 					]
 				]
 			},
-			"buffers":
-			[
-				{
-					"contents": "; Hello World - Escreve mensagem armazenada na memoria na tela\n\n\n; ------- TABELA DE CORES -------\n; adicione ao caracter para Selecionar a cor correspondente\n\n; 0 branco							0000 0000\n; 256 marrom						0001 0000\n; 512 verde							0010 0000\n; 768 oliva							0011 0000\n; 1024 azul marinho					0100 0000\n; 1280 roxo							0101 0000\n; 1536 teal							0110 0000\n; 1792 prata						0111 0000\n; 2048 cinza						1000 0000\n; 2304 vermelho						1001 0000\n; 2560 lima							1010 0000\n; 2816 amarelo						1011 0000\n; 3072 azul							1100 0000\n; 3328 rosa							1101 0000\n; 3584 aqua							1110 0000\n; 3840 branco						1111 0000\n\n\n\njmp main\n\n\nmensagem : var #21\nstatic mensagem + #0, #'A'\nstatic mensagem + #1, #'A'\nstatic mensagem + #2, #'A'\nstatic mensagem + #3, #'a'\nstatic mensagem + #4, #'B'\nstatic mensagem + #5, #'C'\nstatic mensagem + #6, #'E'\nstatic mensagem + #7, #'N'\nstatic mensagem + #8, #'T'\nstatic mensagem + #9, #'E'\nstatic mensagem + #10, #'R'\nstatic mensagem + #11, #' '\nstatic mensagem + #12, #'T'\nstatic mensagem + #13, #'O'\nstatic mensagem + #14, #' '\nstatic mensagem + #15, #'S'\nstatic mensagem + #16, #'T'\nstatic mensagem + #17, #'A'\nstatic mensagem + #18, #'R'\nstatic mensagem + #19, #'T'\nstatic mensagem + #20, #'\\0'\n\n\nmensagem2 : string \"Ola Mundo!\"\n\n;---- Inicio do Programa Principal -----\n\nmain:\n	loadn r0, #0		; Posicao na tela onde a mensagem sera' escrita\n	loadn r1, #mensagem2	; Carrega r1 com o endereco do vetor que contem a mensagem\n	loadn r2, #256		; Seleciona a COR da Mensagem\n	\n	call Imprimestr   ;  r0 = Posicao da tela que o primeiro caractere da mensagem sera' impresso;  r1 = endereco onde comeca a mensagem; r2 = cor da mensagem.   Obs: a mensagem sera' impressa ate' encontrar \"/0\"\n\n	halt\n	\n;---- Fim do Programa Principal -----\n	\n;---- Inicio das Subrotinas -----\n	\nImprimestr:	;  Rotina de Impresao de Mensagens:    r0 = Posicao da tela que o primeiro caractere da mensagem sera' impresso;  r1 = endereco onde comeca a mensagem; r2 = cor da mensagem.   Obs: a mensagem sera' impressa ate' encontrar \"/0\"\n	push r0	; protege o r0 na pilha para preservar seu valor\n	push r1	; protege o r1 na pilha para preservar seu valor\n	push r2	; protege o r1 na pilha para preservar seu valor\n	push r3	; protege o r3 na pilha para ser usado na subrotina\n	push r4	; protege o r4 na pilha para ser usado na subrotina\n	\n	loadn r3, #'\\0'	; Criterio de parada; r3 = \"/0\"\n\nImprimestrLoop:	\n	loadi r4, r1\n	cmp r4, r3\n	jeq ImprimestrSai\n	add r4, r2, r4\n	outchar r4, r0\n	inc r0\n	inc r1\n	jmp ImprimestrLoop\n	\nImprimestrSai:	\n	pop r4	; Resgata os valores dos registradores utilizados na Subrotina da Pilha\n	pop r3\n	pop r2\n	pop r1\n	pop r0\n	rts\n	\n	\n	",
-					"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/Simulador_Windows_Tudo_Pronto_Fácil (1) (1)/Simulador/Hello4.asm",
-					"file_size": 2649,
-					"file_write_time": 133095303003798594,
-					"settings":
-					{
-						"buffer_size": 2659,
-						"line_ending": "Unix"
-					}
-				}
-			],
 			"build_system": "Packages/Assembly ICMC/Assembly ICMC.sublime-build",
 			"command_palette":
 			{
@@ -95,7 +83,7 @@
 			],
 			"find":
 			{
-				"height": 32.0
+				"height": 30.0
 			},
 			"find_in_files":
 			{
@@ -127,27 +115,229 @@
 				"whole_word": false,
 				"wrap": true
 			},
+			"incremental_find":
+			{
+				"height": 30.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.exec":
+			{
+				"height": 179.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"replace":
+			{
+				"height": 56.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 1338.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"digL",
+						"digLetra_Loop"
+					],
+					[
+						"inc",
+						"incloop"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/Space Invaders/Space_Invaders.asm",
+					"settings":
+					{
+						"buffer_size": 1132,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/nave.asm",
+					"settings":
+					{
+						"buffer_size": 32724,
+						"line_ending": "Windows"
+					}
+				},
+				{
+					"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/forca.asm",
+					"settings":
+					{
+						"buffer_size": 192768,
+						"line_ending": "Windows"
+					}
+				}
+			],
+			"build_system": "Packages/Assembly ICMC/Assembly ICMC.sublime-build",
+			"command_palette":
+			{
+				"height": 81.0,
+				"selected_items":
+				[
+					[
+						"insta",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 400.0
+			},
+			"console":
+			{
+				"height": 126.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects",
+				"/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/Space Invaders"
+			],
+			"file_history":
+			[
+				"/D/Simulador/Hello4.asm",
+				"/D/Teste Ambiente/Hello4.asm",
+				"/D/Teste Ambiente/leString.asm",
+				"/D/Teste Ambiente/forca.asm",
+				"/D/Teste Ambiente - Copia/Hello4.asm",
+				"/D/Teste Ambiente/Sublime Text 3/Data/Packages/User/Preferences.sublime-settings",
+				"/D/Teste Ambiente/printForca.asm",
+				"/D/Teste Ambiente/Sublime Text 3/Data/Packages/User/untitled.sublime-build",
+				"/C/Users/CARLOS~1/AppData/Local/Temp/Rar$DRa0.561/Assembly ICMC.sublime-build",
+				"/D/Documentos/USP/Prat_OrgC/Versao_05_2013/32_bits/Forca01.asm",
+				"/C/Users/CARLOS~1/AppData/Local/Temp/Rar$DRa0.040/Completion Rules.tmPreferences",
+				"/C/Users/CARLOS~1/AppData/Local/Temp/Rar$DRa0.959/C++.tmLanguage",
+				"/C/Users/CARLOS~1/AppData/Local/Temp/Rar$DRa0.091/C++.sublime-settings",
+				"/C/Users/CARLOS~1/AppData/Local/Temp/Rar$DRa0.196/C++.sublime-build",
+				"/C/Users/CARLOS~1/AppData/Local/Temp/Rar$DRa0.532/C.tmLanguage",
+				"/C/Users/CARLOS~1/AppData/Local/Temp/Rar$DRa0.207/Batch File.tmLanguage",
+				"/D/Teste Ambiente/Sublime Text 3/Data/Cache/Assembly ICMC/Assembly_ICMC_Syntax.tmLanguage",
+				"/D/Teste Ambiente/Sublime Text 3/Data/Packages/User/Assembly ICMC.sublime-build",
+				"/D/Documentos/USP/Prat_OrgC/Aula_2015-03-04/Hello4.asm",
+				"/D/Teste Ambiente/Hello4.mif",
+				"/D/Teste Ambiente/Versao_05_2013/Exemplos/Hello4.asm"
+			],
+			"find":
+			{
+				"height": 30.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"r*",
+					"r3",
+					"r2",
+					"r3"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"follow_symlinks": true,
+					"path": "C:\\Users\\joaog\\Documents\\Assembly Org Arq\\Assembly-projects"
+				}
+			],
 			"groups":
 			[
 				{
-					"selected": 0,
+					"selected": 1,
 					"sheets":
 					[
 						{
 							"buffer": 0,
-							"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/Simulador_Windows_Tudo_Pronto_Fácil (1) (1)/Simulador/Hello4.asm",
+							"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/Space Invaders/Space_Invaders.asm",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 2659,
+								"buffer_size": 1132,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										1422,
-										1422
+										468,
+										468
 									]
 								],
 								"settings":
@@ -156,10 +346,68 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 1078.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/nave.asm",
+							"semi_transient": true,
+							"settings":
+							{
+								"buffer_size": 32724,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										3193,
+										3193
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Assembly ICMC/Assembly ICMC.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 2087.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/forca.asm",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 192768,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										0,
+										0
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Assembly ICMC/Assembly ICMC.tmLanguage",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 2,
 							"type": "text"
 						}
 					]
@@ -167,7 +415,7 @@
 			],
 			"incremental_find":
 			{
-				"height": 32.0
+				"height": 30.0
 			},
 			"input":
 			{
@@ -204,11 +452,11 @@
 			{
 				"height": 0.0
 			},
-			"position": "0,0,1,-32000,-32000,-1,-1,905,282,115,1638",
+			"position": "0,0,1,-1,-1,-1,-1,897,299,107,1655",
 			"project": "",
 			"replace":
 			{
-				"height": 60.0
+				"height": 56.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -243,12 +491,12 @@
 			"show_open_files": false,
 			"show_tabs": true,
 			"side_bar_visible": true,
-			"side_bar_width": 150.0,
+			"side_bar_width": 213.0,
 			"status_bar_visible": true,
 			"template_settings":
 			{
 			},
-			"window_id": 1,
+			"window_id": 5,
 			"workspace_name": ""
 		}
 	],

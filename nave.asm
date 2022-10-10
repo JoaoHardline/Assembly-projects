@@ -101,19 +101,19 @@ Rand : var #30			; Tabela de nr. Randomicos entre 0 - 7
 main:
 	call ApagaTela
 	loadn R1, #tela1Linha0	; Endereco onde comeca a primeira linha do cenario!!
-	loadn R2, #1536  			; cor branca!
+	loadn R2, #0  			; cor branca!
 	call ImprimeTela2   		;  Rotina de Impresao de Cenario na Tela Inteira
     
 	loadn R1, #tela2Linha0	; Endereco onde comeca a primeira linha do cenario!!
-	loadn R2, #512  			; cor branca!
+	loadn R2, #0  			; cor branca!
 	call ImprimeTela2   		;  Rotina de Impresao de Cenario na Tela Inteira
     
 	loadn R1, #tela3Linha0	; Endereco onde comeca a primeira linha do cenario!!
-	loadn R2, #2816   			; cor branca!
+	loadn R2, #0   			; cor branca!
 	call ImprimeTela2   		;  Rotina de Impresao de Cenario na Tela Inteira
 
 	loadn R1, #tela4Linha0	; Endereco onde comeca a primeira linha do cenario!!
-	loadn R2, #256   			; cor branca!
+	loadn R2, #3072   			; cor azul!
 	call ImprimeTela2   		;  Rotina de Impresao de Cenario na Tela Inteira
 
 	Loadn R0, #0			
@@ -481,7 +481,7 @@ MoveAlien_Desenha:
 	push R0
 	push R1
 	
-	Loadn R1, #'A'	; Alien
+	Loadn R1, #'*'	; Alien
 	load R0, posAlien
 	outchar R1, R0
 	store posAntAlien, R0
@@ -507,7 +507,8 @@ MoveTiro:
 	cmp r0, r1
 	jeq MoveTiro_Skip
 		call MoveTiro_Apaga
-		call MoveTiro_Desenha		;}
+		call MoveTiro_Desenha
+	;}
   MoveTiro_Skip:
 	
 	pop r1
@@ -888,12 +889,12 @@ ApagaTela:
 	rts	
 	
 ;------------------------	
-; Declara uma tela vazia para ser preenchida em tempo de execussao:
+; Declara uma tela vazia para ser preenchida em tempo de execucao:
 
-tela0Linha0  : string "                                        "
+tela0Linha0  : string "  .                                     "
 tela0Linha1  : string "                                        "
 tela0Linha2  : string "                                        "
-tela0Linha3  : string "                                        "
+tela0Linha3  : string "                             .          "
 tela0Linha4  : string "                                        "
 tela0Linha5  : string "                                        "
 tela0Linha6  : string "                                        "
@@ -910,7 +911,7 @@ tela0Linha16 : string "                                        "
 tela0Linha17 : string "                                        "
 tela0Linha18 : string "                                        "
 tela0Linha19 : string "                                        "
-tela0Linha20 : string "                                        "
+tela0Linha20 : string "           .                            "
 tela0Linha21 : string "                                        "
 tela0Linha22 : string "                                        "
 tela0Linha23 : string "                                        "
@@ -930,10 +931,10 @@ tela1Linha4  : string "                                        "
 tela1Linha5  : string "                                        "
 tela1Linha6  : string "                                        "
 tela1Linha7  : string "                                        "
-tela1Linha8  : string "                        @@@@            "
-tela1Linha9  : string "                      @@@@@@@@@@        "
-tela1Linha10 : string "                       @@@@@@@@@@@@     "
-tela1Linha11 : string "                         @@@            "
+tela1Linha8  : string "        .                               "
+tela1Linha9  : string "                                        "
+tela1Linha10 : string "                                        "
+tela1Linha11 : string "                                        "
 tela1Linha12 : string "                                        "
 tela1Linha13 : string "                                        "
 tela1Linha14 : string "                                        "
@@ -947,7 +948,7 @@ tela1Linha21 : string "                                        "
 tela1Linha22 : string "                                        "
 tela1Linha23 : string "                                        "
 tela1Linha24 : string "                                        "
-tela1Linha25 : string "                                        "
+tela1Linha25 : string "                         .              "
 tela1Linha26 : string "                                        "
 tela1Linha27 : string "                                        "
 tela1Linha28 : string "                                        "
@@ -961,7 +962,7 @@ tela2Linha1  : string "                                        "
 tela2Linha2  : string "                                        "
 tela2Linha3  : string "                                        "
 tela2Linha4  : string "                                        "
-tela2Linha5  : string "                                        "
+tela2Linha5  : string "                       .                "
 tela2Linha6  : string "                                        "
 tela2Linha7  : string "                                        "
 tela2Linha8  : string "                                        "
@@ -973,15 +974,15 @@ tela2Linha13 : string "                                        "
 tela2Linha14 : string "                                        "
 tela2Linha15 : string "                                        "
 tela2Linha16 : string "                                        "
-tela2Linha17 : string "                     :  :               "
-tela2Linha18 : string "          :  :     :      :             "
-tela2Linha19 : string "       :       : :          :           "
-tela2Linha20 : string "     :        :    :         :          "
-tela2Linha21 : string "            :         :                 "
-tela2Linha22 : string "          :             :               "
-tela2Linha23 : string "         :                :             "
-tela2Linha24 : string "         :                 :            "
-tela2Linha25 : string "          :               :             "
+tela2Linha17 : string "                                        "
+tela2Linha18 : string "                                        "
+tela2Linha19 : string "                                        "
+tela2Linha20 : string "                                        "
+tela2Linha21 : string "                                        "
+tela2Linha22 : string "                                        "
+tela2Linha23 : string "                                        "
+tela2Linha24 : string "                                        "
+tela2Linha25 : string "                                        "
 tela2Linha26 : string "                                        "
 tela2Linha27 : string "                                        "
 tela2Linha28 : string "                                        "
@@ -990,26 +991,26 @@ tela2Linha29 : string "                                        "
 
 ; Declara e preenche tela linha por linha (40 caracteres):
 tela3Linha0  : string "                                        "
-tela3Linha1  : string "                                        "
+tela3Linha1  : string "                                 .      "
 tela3Linha2  : string "                                        "
 tela3Linha3  : string "                                        "
-tela3Linha4  : string "    .  |  .                             "
-tela3Linha5  : string "      OOO                               "
-tela3Linha6  : string "   - OOOOO -                            "
-tela3Linha7  : string "      OOO                               "
-tela3Linha8  : string "    .  |  .                             "
+tela3Linha4  : string "           .                            "
+tela3Linha5  : string "                                        "
+tela3Linha6  : string "            .                           "
+tela3Linha7  : string "                                        "
+tela3Linha8  : string "                                        "
 tela3Linha9  : string "                                        "
 tela3Linha10 : string "                                        "
 tela3Linha11 : string "                                        "
-tela3Linha12 : string "                                        "
+tela3Linha12 : string "               .                        "
 tela3Linha13 : string "                                        "
 tela3Linha14 : string "                                        "
 tela3Linha15 : string "                                        "
 tela3Linha16 : string "                                        "
 tela3Linha17 : string "                                        "
-tela3Linha18 : string "                                        "
+tela3Linha18 : string "                       .                "
 tela3Linha19 : string "                                        "
-tela3Linha20 : string "                **                      "
+tela3Linha20 : string "                .                       "
 tela3Linha21 : string "                                        "
 tela3Linha22 : string "                                        "
 tela3Linha23 : string "                                        "
@@ -1028,9 +1029,9 @@ tela4Linha2  : string "                                        "
 tela4Linha3  : string "                                        "
 tela4Linha4  : string "                                        "
 tela4Linha5  : string "                                        "
-tela4Linha6  : string "                                        "
+tela4Linha6  : string "                               .        "
 tela4Linha7  : string "                                        "
-tela4Linha8  : string "                                        "
+tela4Linha8  : string "     .                                  "
 tela4Linha9  : string "                                        "
 tela4Linha10 : string "                                        "
 tela4Linha11 : string "                                        "
@@ -1038,17 +1039,17 @@ tela4Linha12 : string "                                        "
 tela4Linha13 : string "                                        "
 tela4Linha14 : string "                                        "
 tela4Linha15 : string "                                        "
-tela4Linha16 : string "                                        "
+tela4Linha16 : string "                 .                      "
 tela4Linha17 : string "                                        "
 tela4Linha18 : string "                                        "
-tela4Linha19 : string "                                        "
+tela4Linha19 : string "                                 .      "
 tela4Linha20 : string "                                        "
-tela4Linha21 : string "                 ..                     "
-tela4Linha22 : string "                  ..                    "
-tela4Linha23 : string "                   ..                   "
-tela4Linha24 : string "                   ..                   "
-tela4Linha25 : string "                  ...                   "
-tela4Linha26 : string "                 ...                    "
-tela4Linha27 : string "                ...                     "
-tela4Linha28 : string "               ....                     "
-tela4Linha29 : string "              .....                     "
+tela4Linha21 : string "                                        "
+tela4Linha22 : string "                                        "
+tela4Linha23 : string "                                        "
+tela4Linha24 : string "                                        "
+tela4Linha25 : string "              ............              "
+tela4Linha26 : string "          ....................          "
+tela4Linha27 : string "      ............................      "
+tela4Linha28 : string "   ..................................   "
+tela4Linha29 : string "........................................"
