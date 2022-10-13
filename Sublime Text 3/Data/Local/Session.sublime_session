@@ -181,6 +181,18 @@
 				"selected_items":
 				[
 					[
+						"print_msg",
+						"print_msg_loop	abc"
+					],
+					[
+						"print",
+						"print_msg_return	abc"
+					],
+					[
+						"tel",
+						"tela1Linha0	abc"
+					],
+					[
 						"alien",
 						"alien1	abc"
 					],
@@ -200,7 +212,7 @@
 					"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/Space Invaders/Space_Invaders.asm",
 					"settings":
 					{
-						"buffer_size": 11942,
+						"buffer_size": 13789,
 						"line_ending": "Windows"
 					}
 				},
@@ -208,7 +220,7 @@
 					"file": "/C/Users/joaog/Documents/Assembly Org Arq/Assembly-projects/nave.asm",
 					"settings":
 					{
-						"buffer_size": 32714,
+						"buffer_size": 32736,
 						"line_ending": "Windows"
 					}
 				},
@@ -343,15 +355,15 @@
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 11942,
+								"buffer_size": 13789,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										1219,
-										1219
+										2899,
+										2899
 									]
 								],
 								"settings":
@@ -360,7 +372,7 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 409.0,
+								"translation.y": 1886.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
@@ -372,15 +384,15 @@
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 32714,
+								"buffer_size": 32736,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										22680,
-										32714
+										18406,
+										18406
 									]
 								],
 								"settings":
@@ -389,7 +401,7 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 25955.0,
+								"translation.y": 17865.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 1,
@@ -418,7 +430,7 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 92.0,
+								"translation.y": 89.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 2,
@@ -447,7 +459,7 @@
 									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
-								"translation.y": 3404.0,
+								"translation.y": 3268.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 3,
@@ -495,7 +507,7 @@
 			{
 				"height": 0.0
 			},
-			"position": "0,0,1,-32000,-32000,-1,-1,935,241,145,1597",
+			"position": "0,0,1,-1,-1,-1,-1,935,241,145,1597",
 			"project": "",
 			"replace":
 			{

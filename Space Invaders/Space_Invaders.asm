@@ -24,16 +24,73 @@ posTiroAlien4: var #1 ; guarda posicao do tiro do alien4
 ;----------------------------------------------------------------------------------------
 main:
 	call ClearScreen ; chama a funcao que limpa a tela para comecar o jogo
-
+	loadn R1, #tela1Linha0 ;endereco da primeira linha do mapa do jogo
+	loadn R2, #0 ; cor branca
+	call printTela1
 
 
 
 ;-----------------------------------------------------------------------------------------
 
-
-
+printTela1:
+	;R1 eh o endereco da primeira linha do mapa do jogo
+	;R2 guarda a cor do cenario
+	
+	push R0 ;guarda o R0 para ser usado nesse metodo
+	loadn R0, #0 ;define posicao incial como sendo o comeco da tela
+	
+	push R1 ;guarda o R1 e seu valor para ser usado no metodo
+	push R2 ;guarda o R2 e seu valor para ser usado no metodo
+	
+	push R3 ;guarda o R3 para ser usado no metodo
+	loadn R3, #40 ;incrementa para ir pra proxima parte da tela
+	
+	push R4 ;guarda o R4 para ser usado no metodo
+	loadn R4, #41 ;vai pra proxima linha da tela
+	
+	push R5 ;guarda o R5 para ser usado nesse metodo
+	loadn R5, #1080 ;ultimo "pixel" da tela
+	
+	push R6 ;guarda o R6 para ser usado nesse metodo
+	loadn R6, ;endereco da primeira linha do mapa a ser imprimido
+	
+	printTela1_loop:
+		call print_msg ;metodo para imprimir mensagens na tela
 
 ;------------------------------------------------------------------------------------------
+
+print_msg:
+	;metodo para imprimir mensagens na tela
+	push R0 ;guarda R0 para ser usado nesse metodo
+	push R1 ;guarda R1 para ser usado nesse metodo
+	push R2 ;guarda R2 para ser usado nesse metodo
+	
+	push R3 ;guarda R3 para ser usado nesse metodo
+	loadn R3, #'\0' ;criterio de parada (fim da mensagem)
+	
+	push R4 ;guarda R4 para ser usado nesse metodo
+	
+	print_msg_loop:
+		load R4, R1
+		cmp R4, R3 ;compara R4 com R3, (se char == '\0') return
+		jeq print_msg_return
+		add R4, R2, R4 ;adiciona cor
+		outchar R4, R0 ;imprime char na tela
+		inc R0 ;incrementa posicao na tela
+		inc R1 ; incrementa ponteiro da string
+		jmp print_msg_loop
+		
+	print_msg_return:
+		;resgata os valores que contem na pilha para os registradores
+		pop R0
+		pop R1
+		pop R2
+		pop R3
+		pop R4
+		rts ;return
+		
+;------------------------------------------------------------------------------------------------
+
 ClearScreen: ; funcao para limpar a tela
 	push r0
 	push r1
@@ -58,6 +115,7 @@ ClearScreen: ; funcao para limpar a tela
 
 ;------------------------------------------------------------------------------------------
 ; cria uma tela vazia para ser preenchida em tempo de execucao:
+; tela0 eh a tela de vitoria/perda
 tela0Linha0  : string "  .                                     "
 tela0Linha1  : string "                                        "
 tela0Linha2  : string "                                        "

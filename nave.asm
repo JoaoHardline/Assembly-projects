@@ -890,7 +890,7 @@ ApagaTela:
 	
 ;------------------------	
 ; Declara uma tela vazia para ser preenchida em tempo de execucao:
-
+;tela de vitoria/perda
 tela0Linha0  : string "  .                                     "
 tela0Linha1  : string "                                        "
 tela0Linha2  : string "                                        "
@@ -902,7 +902,7 @@ tela0Linha7  : string "                                        "
 tela0Linha8  : string "                                        "
 tela0Linha9  : string "                                        "
 tela0Linha10 : string "                                        "
-tela0Linha11 : string "                                        "
+tela0Linha11 : string "                .............           "
 tela0Linha12 : string "                                        "
 tela0Linha13 : string "                                        "
 tela0Linha14 : string "                                        "
